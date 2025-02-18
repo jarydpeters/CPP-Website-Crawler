@@ -126,6 +126,22 @@ void searchKeywords(const std::string& html, const std::string& url)
     }
 }
 
+bool isImageUrl(const std::string& url) 
+{
+    // List of image extensions to exclude
+    const std::vector<std::string> imageExtensions = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".svg", ".webp"};
+    
+    // Check if the URL ends with any of the image extensions
+    for (const auto& ext : imageExtensions) 
+    {
+        if (url.rfind(ext) == url.length() - ext.length()) 
+        {
+            return true; // It's an image URL
+        }
+    }
+    return false; // It's not an image URL
+}
+
 // Crawler function
 void crawl(const std::string& startUrl) 
 {
@@ -146,7 +162,7 @@ void crawl(const std::string& startUrl)
         std::vector<std::string> links = extractLinks(html);
         for (const auto& link : links) 
         {
-            if (visitedUrls.find(link) == visitedUrls.end()) 
+            if (visitedUrls.find(link) == visitedUrls.end() && !isImageUrl(link)) 
             {
                 visitedUrls.insert(link);  // Mark this link as visited
                 urlQueue.push(link);  // Queue the link for processing
