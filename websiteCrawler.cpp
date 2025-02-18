@@ -118,7 +118,7 @@ void searchKeywords(const std::string& html, const std::string& url)
         // Perform the search using the regex
         if (std::regex_search(lowerHtml, wordRegex)) 
         {
-            std::cout << "[MATCH] Found keyword '" << keyword << "' in " << url << "\n";
+            std::cout << "\n[MATCH] Found keyword '" << keyword << "' in " << url << "\n\n";
 
             // Write the matched URL to the file
             matchedUrlsFile << "Found keyword '" << keyword << "' in " << url << "\n";
@@ -137,10 +137,8 @@ void crawl(const std::string& startUrl)
         std::string currentUrl = urlQueue.front();
         urlQueue.pop();
 
-        if (debug) 
-        {
-            std::cout << "Visiting: " << currentUrl << "\n";
-        }
+        std::cout << "Visiting: " << currentUrl << "\n";
+        std::cout << "URL Queue Size: " << urlQueue.size() << " URLs remaining in the queue." << std::endl;
 
         std::string html = fetchHTML(currentUrl);
         searchKeywords(html, currentUrl);
@@ -166,6 +164,8 @@ void crawl(const std::string& startUrl)
             }
         }
     }
+
+    std::cout << "Crawling complete! All pages have been visited." << std::endl;
 }
 
 int main() 
