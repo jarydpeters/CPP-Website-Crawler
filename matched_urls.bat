@@ -1,0 +1,16 @@
+@echo off
+start https://distek.com/2019/11/14/plugfest-recap-2/
+start https://distek.com/2020/05/28/vt-anywhere-2/
+start https://distek.com/vt-anywhere/
+start https://distek.com/tag/vt-anywhere/
+start https://distek.com/2019/06/20/look-at-plugfest/
+start https://distek.com/2019/04/25/plugfest-3/
+start https://distek.com/2018/09/13/2018-aef-plugfest/
+start https://distek.com/2018/07/19/vt-anywhere/
+start https://distek.com/look-at-plugfest/
+start https://distek.com/vt-anywhere?name=vt-anywhere
+start https://distek.com/2020/09/24/application-dev/
+start https://distek.com/products/VT-Anywhere/
+start https://distek.com/2020/06/17/git-part-1/
+start https://distek.com/tag/ut/
+start https://distek.com/tag/virtec-software-library/
